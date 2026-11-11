@@ -404,7 +404,7 @@ public class G extends Application implements Application.ActivityLifecycleCallb
     }
 
     public static boolean canUseDonorFeatures(Context context) {
-        return isDonate() || (context != null && isDoKey(context));
+        return true;
     }
 
     public static boolean isThemeAvailable(String val, Context context) {
@@ -1128,21 +1128,11 @@ public class G extends Application implements Application.ActivityLifecycleCallb
     }
 
     public static boolean isDonate() {
-        return hasDonateBuild();
+        return true;
     }
 
     public static boolean isDoKey(Context ctx) {
-        if (!gPrefs.getBoolean(REG_DO, false)) {
-            try {
-                ApplicationInfo app = ctx.getPackageManager().getApplicationInfo("dev.ukanth.ufirewall.donatekey", 0);
-                if (app != null) {
-                    gPrefs.edit().putBoolean(REG_DO, true).commit();
-                }
-            } catch (PackageManager.NameNotFoundException | NullPointerException e) {
-                gPrefs.edit().putBoolean(REG_DO, false).commit();
-            }
-        }
-        return gPrefs.getBoolean(REG_DO, false);
+      return true;
     }
 
 
