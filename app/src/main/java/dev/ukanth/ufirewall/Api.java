@@ -3938,6 +3938,9 @@ public final class Api {
 
 
     public static void donateDialog(final Context ctx, boolean showToast) {
+    
+    return;
+    
         if (showToast) {
             Toast.makeText(ctx, ctx.getText(R.string.donate_only), Toast.LENGTH_LONG).show();
         } else {
